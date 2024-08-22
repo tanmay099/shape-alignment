@@ -34,14 +34,15 @@ export function generateShape(
   id: string
 ): JSX.Element | undefined {
   if (shape === SHAPE_CONSTANT.RECTANGLE)
-    return <Rectangle id={id} defaultPoints={defaultPoints.RECTANGLE} />;
+    return <Rectangle key={id} id={id} defaultPoints={defaultPoints.RECTANGLE} />;
   if (shape === SHAPE_CONSTANT.TRIANGLE)
-    return <Triangle id={id} defaultPoints={defaultPoints.TRIANGLE} />;
+    return <Triangle  key={id} id={id} defaultPoints={defaultPoints.TRIANGLE} />;
   if (shape === SHAPE_CONSTANT.CIRCLE)
-    return <CircleShape id={id} args={defaultPoints.CIRCLE} />;
+    return <CircleShape key={id} id={id} args={defaultPoints.CIRCLE} />;
   if (shape === SHAPE_CONSTANT.LINE)
     return (
       <PolyLine
+        key={id}
         id={id}
         defaultStart={defaultPoints.LINE[0]}
         defaultEnd={defaultPoints.LINE[1]}
