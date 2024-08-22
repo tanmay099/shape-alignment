@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Circle,
-  Line,
-  Rectangle,
-  Triangle,
-} from "./utils";
+import { Circle, Line, Rectangle, Triangle } from "./utils";
 import { useStore } from "@/app/store";
 import { v4 as uuid } from "uuid";
 import { UserGuideList } from "../list";
@@ -51,6 +46,3 @@ function Tile({ icon, text, type = "" }: ITile) {
     </div>
   );
 }
-
-
-

@@ -17,7 +17,7 @@ export function CircleShape({ args, id }: { args: any; id: string }) {
       anchor={[0, 0, 0]}
       enabled
     >
-      <Ring onContextMenu={handleRightClick} args={[50, 60]}  />
+      <Ring onContextMenu={handleRightClick} args={args}  />
     </PivotControls>
   );
 }
