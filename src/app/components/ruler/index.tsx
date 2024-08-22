@@ -22,8 +22,8 @@ export const RulerHorizontal = ({ color = "black" }) => {
       const tickLength = i % 5 === 0 ? 25 : 12.5;
       const point = i * (length / divisions);
       ticks.push(
-        <group>
-          <Text fontSize={12} color={"black"} anchorX={point} anchorY={-y1}>
+        <group key={-y1-i}>
+          <Text key={-y1} fontSize={12} color={"black"} anchorX={point} anchorY={-y1}>
             {-point}
           </Text>
           <Line
@@ -46,8 +46,8 @@ export const RulerHorizontal = ({ color = "black" }) => {
       const tickLength = i % 5 === 0 ? 25 : 12.5;
       const point = i * (length / divisions);
       ticks.push(
-        <group>
-          <Text fontSize={12} color={color} anchorX={-point} anchorY={-y1}>
+        <group key={-y1-i}>
+          <Text key={-y1} fontSize={12} color={color} anchorX={-point} anchorY={-y1}>
             {point}
           </Text>
           <Line
@@ -98,8 +98,8 @@ export const RulerVertical = ({ color = "black" }) => {
       const tickLength = i % 5 === 0 ? 25 : 12.5;
       const point = i * (length / divisions);
       ticks.push(
-        <group key={i}>
-          <Text fontSize={12} color={color} anchorX={-x1} anchorY={-point}>
+        <group key={-x1-i}>
+          <Text key={-x1} fontSize={12} color={color} anchorX={-x1} anchorY={-point}>
             {point}
           </Text>
           <Line
@@ -122,8 +122,8 @@ export const RulerVertical = ({ color = "black" }) => {
       const tickLength = i % 5 === 0 ? 25 : 12.5;
       const point = i * (length / divisions);
       ticks.push(
-        <group>
-          <Text fontSize={12} color={color} anchorX={-x1} anchorY={point}>
+        <group key={-x1-i}>
+          <Text key={-x1} fontSize={12} color={color} anchorX={-x1} anchorY={point}>
             {-point}
           </Text>
           <Line
