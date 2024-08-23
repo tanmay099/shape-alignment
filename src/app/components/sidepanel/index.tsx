@@ -3,6 +3,7 @@ import { Circle, Line, Rectangle, Triangle } from "./utils";
 import { useStore } from "@/app/store";
 import { v4 as uuid } from "uuid";
 import { UserGuideList } from "../list";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 const icons = [
   { icon: <Rectangle />, text: "Rectangle", type: "RECTANGLE", id: uuid() },
@@ -38,7 +39,10 @@ function Tile({ icon, text, type = "" }: ITile) {
   const addShape = useStore((state) => state.addShape);
   return (
     <div
-      onClick={() => addShape({ type, id: uuid() })}
+      onClick={() => {
+        {sendGAEvent('event', 'buttonClicked', { value: `clicked by at ${Date.now()}` })}
+        addShape({ type, id: uuid() })
+      }}
       className="cursor-pointer mx-2 my-2 h-20 shadow-md flex flex-col justify-center text-center bg-gray-50"
     >
       {icon}
